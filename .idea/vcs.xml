@@ -2,9 +2,5 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/DOM" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/npm/simplefolio" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/start-here-guidelines" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/startup-of-the-year-master" vcs="Git" />
   </component>
 </project>
