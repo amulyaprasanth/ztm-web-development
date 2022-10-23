@@ -7,6 +7,7 @@ import Rank from './components/Rank/Rank';
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import SignIn  from './components/SignIn/SignIn';
 import Register from './components/Register/Register';
+import { APIKey } from './APIKey';
 import './App.css';
 
 
@@ -80,7 +81,7 @@ class App extends Component {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
-                'Authorization': 'Key d4a25ab1de8d469dac58785b8e1c6cc9'
+                'Authorization': 'Key ' + APIKey
             },
             body: raw
         };
