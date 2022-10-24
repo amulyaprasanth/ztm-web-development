@@ -2,12 +2,18 @@
   "name": "node",
   "version": "1.0.0",
   "description": "",
-  "type" : "module",
-  "main": "script2.js",
+  "type": "module",
+  "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon RESTfulAPI.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
