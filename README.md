@@ -1,1 +1,1 @@
-# this repository contains the fiels of zero to mastery web development course
+# this repository contains the files of zero to mastery web development course
