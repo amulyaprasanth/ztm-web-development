@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 // import Particles from 'react-particles-js';
 import ParticlesBg from "particles-bg";
-import Clarifai from "clarifai";
 import FaceRecognition from "./components/FaceRecognition/FaceRecognition";
 import Navigation from "./components/Navigation/Navigation";
 import Signin from "./components/Signin/Signin";
@@ -10,25 +9,26 @@ import Logo from "./components/Logo/Logo";
 import ImageLinkForm from "./components/ImageLinkForm/ImageLinkForm";
 import Rank from "./components/Rank/Rank";
 import "./App.css";
-import { APIKey } from "./APIKey";
+
+const initialState = {
+    input: "",
+    imageUrl: "",
+    box: {},
+    route: "signin",
+    isSignedIn: false,
+    user: {
+        id: "",
+        name: "",
+        email: "",
+        entries: 0,
+        joined: "",
+    },
+};
 
 class App extends Component {
     constructor() {
         super();
-        this.state = {
-            input: "",
-            imageUrl: "",
-            box: {},
-            route: "signin",
-            isSignedIn: false,
-            user: {
-                id: "",
-                name: "",
-                email: "",
-                entries: 0,
-                joined: "",
-            },
-        };
+        this.state = initialState
     }
 
     loadUser = (data) => {
@@ -87,7 +87,7 @@ class App extends Component {
             method: "POST",
             headers: {
                 Accept: "application/json",
-                Authorization: "Key " + APIKey,
+                Authorization: "Key d4a25ab1de8d469dac58785b8e1c6cc9",
             },
             body: raw,
         };
@@ -129,7 +129,7 @@ class App extends Component {
 
     onRouteChange = (route) => {
         if (route === "signout") {
-            this.setState({ isSignedIn: false });
+            this.setState(initialState);
         } else if (route === "home") {
             this.setState({ isSignedIn: true });
         }
@@ -140,7 +140,7 @@ class App extends Component {
         const { isSignedIn, imageUrl, route, box } = this.state;
         return (
             <div className="App">
-                <ParticlesBg type="fountain" bg={true} />
+                <ParticlesBg type="cobweb" bg={true} />
                 <Navigation
                     isSignedIn={isSignedIn}
                     onRouteChange={this.onRouteChange}
@@ -168,7 +168,7 @@ class App extends Component {
                         loadUser={this.loadUser}
                         onRouteChange={this.onRouteChange}
                     />
-                )}
+        )}
             </div>
         );
     }

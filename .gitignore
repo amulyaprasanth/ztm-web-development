@@ -5,3 +5,4 @@ dist/
 /build
 .vs/
 APIKey.js
+.eslintcache
