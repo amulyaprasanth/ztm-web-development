@@ -28,7 +28,7 @@ const initialState = {
 class App extends Component {
     constructor() {
         super();
-        this.state = initialState
+        this.state = initialState;
     }
 
     loadUser = (data) => {
@@ -102,13 +102,16 @@ class App extends Component {
         )
             .then((response) => {
                 if (response) {
-                    fetch("http://localhost:3000/image", {
-                        method: "put",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({
-                            id: this.state.user.id,
-                        }),
-                    })
+                    fetch(
+                        "https://whispering-escarpment-35869.herokuapp.com/image",
+                        {
+                            method: "put",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({
+                                id: this.state.user.id,
+                            }),
+                        }
+                    )
                         .then((response) => response.json())
                         .then((count) => {
                             this.setState(
@@ -168,7 +171,7 @@ class App extends Component {
                         loadUser={this.loadUser}
                         onRouteChange={this.onRouteChange}
                     />
-        )}
+                )}
             </div>
         );
     }
